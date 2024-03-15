@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://clbwfvcgsxdxn"]
+[gd_scene load_steps=34 format=3 uid="uid://clbwfvcgsxdxn"]
 
 [ext_resource type="Texture2D" uid="uid://bwlgb8pmyxql8" path="res://player_sprite.png" id="1_28fn5"]
 [ext_resource type="Script" path="res://GameManager.gd" id="1_mvorh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Enemy.gd" id="3_3nuri"]
 [ext_resource type="Texture2D" uid="uid://b7x2aafnq8llt" path="res://enemy_sprite.png" id="4_dqfla"]
 [ext_resource type="Script" path="res://PlayerHealth.gd" id="5_q1wyy"]
+[ext_resource type="FontFile" uid="uid://b1e2bqvygkelc" path="res://pcsenior.ttf" id="8_5y5wj"]
 [ext_resource type="Script" path="res://ActionValue.gd" id="8_ddj6k"]
 [ext_resource type="Script" path="res://ActionSprite.gd" id="9_2t0ur"]
 [ext_resource type="Script" path="res://EnemyHealth.gd" id="9_7ijfe"]
@@ -25,15 +26,15 @@
 size = Vector2(156.5, 155.625)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xtqtn"]
-font = ExtResource("2_t314c")
+font = ExtResource("8_5y5wj")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_rvr71"]
-font = ExtResource("2_t314c")
+font = ExtResource("8_5y5wj")
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_27nbx"]
-font = ExtResource("2_t314c")
+font = ExtResource("8_5y5wj")
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_qgy05"]
@@ -41,32 +42,33 @@ font = ExtResource("2_t314c")
 font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8llg"]
-font = ExtResource("2_t314c")
-font_size = 30
+font = ExtResource("8_5y5wj")
+font_size = 18
 
 [sub_resource type="LabelSettings" id="LabelSettings_ea1wm"]
-font = ExtResource("2_t314c")
-font_size = 36
+font = ExtResource("8_5y5wj")
+font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_hgm54"]
 font = ExtResource("2_t314c")
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_81nit"]
-font = ExtResource("2_t314c")
+font = ExtResource("8_5y5wj")
 font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_ex4rn"]
-font = ExtResource("2_t314c")
+font = ExtResource("8_5y5wj")
 font_size = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_6qc6u"]
-font = ExtResource("2_t314c")
-font_size = 30
+font = ExtResource("8_5y5wj")
+font_size = 22
 
 [sub_resource type="LabelSettings" id="LabelSettings_cfrva"]
-font = ExtResource("2_t314c")
-font_size = 20
+line_spacing = 10.0
+font = ExtResource("8_5y5wj")
+font_size = 15
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_mvorh")
@@ -132,10 +134,10 @@ horizontal_alignment = 1
 
 [node name="HitAmount" type="Label" parent="Game/UILayer/UI/HitButton/HitText"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 36.0
-offset_right = 294.0
-offset_bottom = 59.0
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 292.0
+offset_bottom = 64.0
 label_settings = SubResource("LabelSettings_rvr71")
 horizontal_alignment = 1
 script = ExtResource("12_tcyvn")
@@ -159,11 +161,10 @@ horizontal_alignment = 1
 
 [node name="HealAmount" type="Label" parent="Game/UILayer/UI/HealButton/HealText"]
 layout_mode = 0
-offset_left = -2.0
-offset_top = 34.0
-offset_right = 292.0
-offset_bottom = 59.0
-text = "12"
+offset_left = -1.0
+offset_top = 41.0
+offset_right = 293.0
+offset_bottom = 66.0
 label_settings = SubResource("LabelSettings_27nbx")
 horizontal_alignment = 1
 script = ExtResource("13_0bw0n")
@@ -187,15 +188,18 @@ offset_right = 452.0
 offset_bottom = 300.0
 
 [node name="PlayerHealth" type="Label" parent="Game/UILayer/PlayerUI"]
+layout_mode = 0
 offset_left = -342.0
 offset_top = 133.0
 offset_right = -181.0
 offset_bottom = 183.0
 label_settings = SubResource("LabelSettings_s8llg")
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("5_q1wyy")
 
 [node name="PlayerName" type="Label" parent="Game/UILayer/PlayerUI"]
+layout_mode = 0
 offset_left = -320.0
 offset_top = 36.0
 offset_right = -200.0
@@ -203,6 +207,7 @@ offset_bottom = 74.0
 text = "Player"
 label_settings = SubResource("LabelSettings_ea1wm")
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EnemyUI" type="Control" parent="Game/UILayer"]
 layout_mode = 3
@@ -213,6 +218,7 @@ offset_right = 452.0
 offset_bottom = 300.0
 
 [node name="ActionValue" type="Label" parent="Game/UILayer/EnemyUI"]
+layout_mode = 0
 offset_left = 488.0
 offset_top = -108.0
 offset_right = 649.0
@@ -222,27 +228,31 @@ horizontal_alignment = 1
 script = ExtResource("8_ddj6k")
 
 [node name="EnemyHealth" type="Label" parent="Game/UILayer/EnemyUI"]
+layout_mode = 0
 offset_left = 487.0
 offset_top = 135.0
 offset_right = 648.0
 offset_bottom = 185.0
 label_settings = SubResource("LabelSettings_s8llg")
 horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("9_7ijfe")
 
 [node name="EnemyName" type="Label" parent="Game/UILayer/EnemyUI"]
-offset_left = 512.0
-offset_top = 38.0
-offset_right = 632.0
-offset_bottom = 76.0
+layout_mode = 0
+offset_left = 508.0
+offset_top = 47.0
+offset_right = 628.0
+offset_bottom = 85.0
 text = "Enemy"
 label_settings = SubResource("LabelSettings_ea1wm")
 horizontal_alignment = 1
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("14_0skss")
 
-[node name="Menu2" type="TextureRect" parent="GameOver"]
+[node name="GameOverMenu" type="TextureRect" parent="GameOver"]
 offset_left = 205.0
 offset_top = 121.0
 offset_right = 922.0
@@ -250,18 +260,18 @@ offset_bottom = 524.0
 texture = ExtResource("15_6uke5")
 expand_mode = 1
 
-[node name="GameOverText" type="Label" parent="GameOver/Menu2"]
+[node name="GameOverText" type="Label" parent="GameOver/GameOverMenu"]
 layout_mode = 0
-offset_left = 231.0
-offset_top = 50.0
-offset_right = 503.0
-offset_bottom = 111.0
+offset_left = 99.0
+offset_top = 47.0
+offset_right = 639.0
+offset_bottom = 108.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_81nit")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreText" type="Label" parent="GameOver/Menu2"]
+[node name="ScoreText" type="Label" parent="GameOver/GameOverMenu"]
 layout_mode = 0
 offset_left = 234.0
 offset_top = 146.0
@@ -273,18 +283,18 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("16_rbscr")
 
-[node name="PlayAgain" type="Button" parent="GameOver/Menu2"]
+[node name="PlayAgain" type="Button" parent="GameOver/GameOverMenu"]
 layout_mode = 0
 offset_left = 248.0
 offset_top = 273.0
 offset_right = 491.0
 offset_bottom = 347.0
 
-[node name="Label" type="Label" parent="GameOver/Menu2/PlayAgain"]
+[node name="Label" type="Label" parent="GameOver/GameOverMenu/PlayAgain"]
 layout_mode = 0
 offset_right = 244.0
 offset_bottom = 74.0
-text = "Play again"
+text = "Play Again"
 label_settings = SubResource("LabelSettings_6qc6u")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -293,7 +303,7 @@ vertical_alignment = 1
 visible = false
 script = ExtResource("14_0skss")
 
-[node name="Menu2" type="TextureRect" parent="Tutorial"]
+[node name="TutorialMenu" type="TextureRect" parent="Tutorial"]
 offset_left = 205.0
 offset_top = 121.0
 offset_right = 922.0
@@ -301,23 +311,23 @@ offset_bottom = 524.0
 texture = ExtResource("15_6uke5")
 expand_mode = 1
 
-[node name="TitleText" type="Label" parent="Tutorial/Menu2"]
+[node name="TitleText" type="Label" parent="Tutorial/TutorialMenu"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 28.0
-offset_right = 556.0
-offset_bottom = 110.0
+offset_left = 45.0
+offset_top = 22.0
+offset_right = 705.0
+offset_bottom = 104.0
 text = "HIT OR HEAL"
 label_settings = SubResource("LabelSettings_81nit")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InformationText" type="Label" parent="Tutorial/Menu2"]
+[node name="InformationText" type="Label" parent="Tutorial/TutorialMenu"]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 110.0
-offset_right = 680.0
-offset_bottom = 265.0
+offset_left = 56.0
+offset_top = 112.0
+offset_right = 683.0
+offset_bottom = 267.0
 text = "Rules:
 1. You can hit or heal once per turn
 2. Healing enrages the enemy, increasing their damage by 1.3x until slain
@@ -326,14 +336,14 @@ label_settings = SubResource("LabelSettings_cfrva")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="Play" type="Button" parent="Tutorial/Menu2"]
+[node name="Play" type="Button" parent="Tutorial/TutorialMenu"]
 layout_mode = 0
 offset_left = 248.0
 offset_top = 273.0
 offset_right = 491.0
 offset_bottom = 347.0
 
-[node name="Label" type="Label" parent="Tutorial/Menu2/Play"]
+[node name="Label" type="Label" parent="Tutorial/TutorialMenu/Play"]
 layout_mode = 0
 offset_right = 244.0
 offset_bottom = 74.0
@@ -357,6 +367,5 @@ stream = ExtResource("20_2ojmb")
 
 [connection signal="pressed" from="Game/UILayer/UI/HitButton" to="." method="_on_hit_button_pressed"]
 [connection signal="pressed" from="Game/UILayer/UI/HealButton" to="." method="_on_heal_button_pressed"]
-[connection signal="pressed" from="GameOver/Menu2/PlayAgain" to="." method="_on_play_again_pressed"]
-[connection signal="pressed" from="GameOver/Menu2/PlayAgain" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Tutorial/Menu2/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="GameOver/GameOverMenu/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Tutorial/TutorialMenu/Play" to="." method="_on_play_pressed"]

@@ -12,7 +12,7 @@ extends Node2D
 @onready var playerHealth = $Game/UILayer/PlayerUI/PlayerHealth
 @onready var enemyHealth = $Game/UILayer/EnemyUI/EnemyHealth
 @onready var actionValue = $Game/UILayer/EnemyUI/ActionValue
-@onready var scoreText = $GameOver/Menu2/ScoreText
+@onready var scoreText = $GameOver/GameOverMenu/ScoreText
 @onready var selectSound = $SelectSound
 @onready var scoreSound = $ScoreSound
 @onready var gameOverSound = $GameOverSound

@@ -15,6 +15,10 @@ run/main_scene="res://game_scene.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+driver/mix_rate.web=44100
+
 [display]
 
 window/stretch/mode="viewport"
@@ -27,3 +31,4 @@ project/assembly_name="Hit or Heal"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

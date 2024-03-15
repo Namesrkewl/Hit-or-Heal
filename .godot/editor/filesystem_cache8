@@ -1,27 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1710462046
+::res://::1710468390
+ActionSprite.gd::GDScript::-1::1710451791::0::1::::<>Sprite2D<>::
+ActionValue.gd::GDScript::-1::1710455507::0::1::::<>Label<>::
 attack_sprite.png::CompressedTexture2D::7194642618117902462::1710450390::1710450391::1::::<><>::
 Enemy.gd::GDScript::-1::1710460928::0::1::::<>CharacterBody2D<>::
+EnemyHealth.gd::GDScript::-1::1710467291::0::1::::<>Label<>::
 enemy_sprite.png::CompressedTexture2D::4681583735595580829::1710450588::1710450070::1::::<><>::
-GameManager.gd::GDScript::-1::1710461196::0::1::::<>Node2D<>::
-game_scene.tscn::PackedScene::5548328834346541503::1710461927::0::1::::<><>::uid://bwlgb8pmyxql8::::res://player_sprite.png<>res://GameManager.gd<>res://Player.gd<>uid://cs1260p8qcncf::::res://Fonts/ARCADECLASSIC.TTF<>res://Enemy.gd<>uid://b7x2aafnq8llt::::res://enemy_sprite.png<>res://PlayerHealth.gd<>res://ActionValue.gd<>res://ActionSprite.gd<>res://EnemyHealth.gd<>res://UI.gd<>res://HitAmount.gd<>res://HealAmount.gd<>res://GameOver.gd<>uid://fs3g4fl1h184::::res://menu_sprite.png<>res://ScoreText.gd<>uid://3xsgtqocxifw::::res://Retro Mystic.ogg
+export_presets.cfg::TextFile::-1::1710464378::0::1::::<><>::
+GameManager.gd::GDScript::-1::1710467430::0::1::::<>Node2D<>::
+GameOver.gd::GDScript::-1::1710458852::0::1::::<>CanvasLayer<>::
+game_scene.tscn::PackedScene::5548328834346541503::1710468004::0::1::::<><>::uid://bwlgb8pmyxql8::::res://player_sprite.png<>res://GameManager.gd<>res://Player.gd<>uid://cs1260p8qcncf::::res://Fonts/ARCADECLASSIC.TTF<>res://Enemy.gd<>uid://b7x2aafnq8llt::::res://enemy_sprite.png<>res://PlayerHealth.gd<>res://ActionValue.gd<>res://ActionSprite.gd<>res://EnemyHealth.gd<>res://UI.gd<>res://HitAmount.gd<>res://HealAmount.gd<>res://GameOver.gd<>uid://fs3g4fl1h184::::res://menu_sprite.png<>res://ScoreText.gd<>uid://3xsgtqocxifw::::res://Retro Mystic.ogg<>uid://4wpimgmqv4cd::::res://select_007.ogg<>uid://cg2tua1o2xs1c::::res://jingles-retro_00.ogg<>uid://digoyu04v4huh::::res://jingles-retro_16.ogg
+HealAmount.gd::GDScript::-1::1710457368::0::1::::<>Label<>::
 heal_sprite.png::CompressedTexture2D::3128923365886297814::1710450682::1710450684::1::::<><>::
+HitAmount.gd::GDScript::-1::1710457362::0::1::::<>Label<>::
 icon.svg::CompressedTexture2D::4598945313907934220::1710443657::1710443661::1::::<><>::
 jingles-retro_00.ogg::AudioStreamOggVorbis::5250902008152688614::1710461992::1710461992::1::::<><>::
 jingles-retro_16.ogg::AudioStreamOggVorbis::7734053054094321123::1710461980::1710461980::1::::<><>::
 menu_sprite.png::CompressedTexture2D::389815339760145247::1710459338::1710459341::1::::<><>::
+pcsenior.ttf::FontFile::4221230147810142840::1075826620::1710468397::1::::<><>::
 Player.gd::GDScript::-1::1710460674::0::1::::<>CharacterBody2D<>::
+PlayerHealth.gd::GDScript::-1::1710467291::0::1::::<>Label<>::
 player_sprite.png::CompressedTexture2D::3953651243795815759::1710446289::1710446291::1::::<><>::
-PlayerHealth.gd::GDScript::-1::1710452510::0::1::::<>Label<>::
-EnemyHealth.gd::GDScript::-1::1710452524::0::1::::<>Label<>::
-ActionSprite.gd::GDScript::-1::1710451791::0::1::::<>Sprite2D<>::
-ActionValue.gd::GDScript::-1::1710455507::0::1::::<>Label<>::
-HitAmount.gd::GDScript::-1::1710457362::0::1::::<>Label<>::
-HealAmount.gd::GDScript::-1::1710457368::0::1::::<>Label<>::
-GameOver.gd::GDScript::-1::1710458852::0::1::::<>CanvasLayer<>::
+README.md::TextFile::-1::1710463565::0::1::::<><>::
 Retro Mystic.ogg::AudioStreamOggVorbis::2013872954141712760::1637235997::1710461856::1::::<><>::
-ScoreText.gd::GDScript::-1::1710461089::0::1::::<>Label<>::
+ScoreText.gd::GDScript::-1::1710467301::0::1::::<>Label<>::
 select_007.ogg::AudioStreamOggVorbis::2081818457451484003::1710462046::1710462047::1::::<><>::
-UI.gd::GDScript::-1::1710453899::0::1::::<>Control<>::
+UI.gd::GDScript::-1::1710462299::0::1::::<>Control<>::
 ::res://Fonts/::1710446689
 ARCADECLASSIC.TTF::FontFile::6091610430668749421::1044762266::1710446689::1::::<><>::
