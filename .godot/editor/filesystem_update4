@@ -1,0 +1,15 @@
+res://game_scene.tscn
+res://Player.gd
+res://Enemy.gd
+res://GameManager.tscn
+res://HitButton.gd
+res://game_scene.gd
+res://GameManager.gd
+res://PlayerHealth.gd
+res://EnemyHealth.gd
+res://ActionSprite.gd
+res://ActionValue.gd
+res://UI.gd
+res://HealAmount.gd
+res://HitAmount.gd
+res://ScoreText.gd

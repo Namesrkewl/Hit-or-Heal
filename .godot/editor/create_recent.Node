@@ -1,0 +1,13 @@
+AudioStreamPlayer2D
+Control
+TextureRect
+Container
+Panel
+Label
+Button
+CanvasLayer
+Node2D
+Node
+Sprite2D
+CollisionShape2D
+CharacterBody2D

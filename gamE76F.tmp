@@ -1,0 +1,287 @@
+[gd_scene load_steps=27 format=3 uid="uid://clbwfvcgsxdxn"]
+
+[ext_resource type="Texture2D" uid="uid://bwlgb8pmyxql8" path="res://player_sprite.png" id="1_28fn5"]
+[ext_resource type="Script" path="res://GameManager.gd" id="1_mvorh"]
+[ext_resource type="Script" path="res://Player.gd" id="1_qheq6"]
+[ext_resource type="FontFile" uid="uid://cs1260p8qcncf" path="res://Fonts/ARCADECLASSIC.TTF" id="2_t314c"]
+[ext_resource type="Script" path="res://Enemy.gd" id="3_3nuri"]
+[ext_resource type="Texture2D" uid="uid://b7x2aafnq8llt" path="res://enemy_sprite.png" id="4_dqfla"]
+[ext_resource type="Script" path="res://PlayerHealth.gd" id="5_q1wyy"]
+[ext_resource type="Script" path="res://ActionValue.gd" id="8_ddj6k"]
+[ext_resource type="Script" path="res://ActionSprite.gd" id="9_2t0ur"]
+[ext_resource type="Script" path="res://EnemyHealth.gd" id="9_7ijfe"]
+[ext_resource type="Script" path="res://UI.gd" id="12_4ihdn"]
+[ext_resource type="Script" path="res://HitAmount.gd" id="12_tcyvn"]
+[ext_resource type="Script" path="res://HealAmount.gd" id="13_0bw0n"]
+[ext_resource type="Script" path="res://GameOver.gd" id="14_0skss"]
+[ext_resource type="Texture2D" uid="uid://fs3g4fl1h184" path="res://menu_sprite.png" id="15_6uke5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1630"]
+size = Vector2(156.5, 155.625)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xtqtn"]
+font = ExtResource("2_t314c")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_rvr71"]
+font = ExtResource("2_t314c")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_27nbx"]
+font = ExtResource("2_t314c")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_qgy05"]
+font = ExtResource("2_t314c")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8llg"]
+font = ExtResource("2_t314c")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_ea1wm"]
+font = ExtResource("2_t314c")
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_hgm54"]
+font = ExtResource("2_t314c")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_81nit"]
+font = ExtResource("2_t314c")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_cfrva"]
+font = ExtResource("2_t314c")
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_6qc6u"]
+font = ExtResource("2_t314c")
+font_size = 30
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_mvorh")
+
+[node name="Game" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="Game"]
+position = Vector2(149, 312)
+script = ExtResource("1_qheq6")
+
+[node name="PlayerSprite" type="Sprite2D" parent="Game/Player"]
+position = Vector2(1, 1)
+scale = Vector2(9.75, 9.75)
+texture = ExtResource("1_28fn5")
+
+[node name="PlayerCollider" type="CollisionShape2D" parent="Game/Player"]
+shape = SubResource("RectangleShape2D_g1630")
+
+[node name="Enemy" type="CharacterBody2D" parent="Game"]
+position = Vector2(980, 316)
+script = ExtResource("3_3nuri")
+
+[node name="EnemySprite" type="Sprite2D" parent="Game/Enemy"]
+position = Vector2(-3.57628e-05, -3.57628e-05)
+scale = Vector2(9.75, 9.75)
+texture = ExtResource("4_dqfla")
+
+[node name="EnemyCollider" type="CollisionShape2D" parent="Game/Enemy"]
+shape = SubResource("RectangleShape2D_g1630")
+
+[node name="Action" type="Node" parent="Game/Enemy"]
+
+[node name="ActionSprite" type="Sprite2D" parent="Game/Enemy/Action"]
+position = Vector2(980, 201)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("9_2t0ur")
+
+[node name="UILayer" type="CanvasLayer" parent="Game"]
+visible = false
+
+[node name="UI" type="Control" parent="Game/UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 412.0
+offset_top = 260.0
+offset_right = 452.0
+offset_bottom = 300.0
+script = ExtResource("12_4ihdn")
+
+[node name="HitButton" type="Button" parent="Game/UILayer/UI"]
+layout_mode = 0
+offset_left = -172.0
+offset_top = 215.0
+offset_right = 125.0
+offset_bottom = 309.0
+
+[node name="HitText" type="Label" parent="Game/UILayer/UI/HitButton"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 296.0
+offset_bottom = 48.0
+text = "HIT"
+label_settings = SubResource("LabelSettings_xtqtn")
+horizontal_alignment = 1
+
+[node name="HitAmount" type="Label" parent="Game/UILayer/UI/HitButton/HitText"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 294.0
+offset_bottom = 59.0
+label_settings = SubResource("LabelSettings_rvr71")
+horizontal_alignment = 1
+script = ExtResource("12_tcyvn")
+
+[node name="HealButton" type="Button" parent="Game/UILayer/UI"]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 215.0
+offset_right = 482.0
+offset_bottom = 309.0
+
+[node name="HealText" type="Label" parent="Game/UILayer/UI/HealButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 296.0
+offset_bottom = 50.0
+text = "HEAL"
+label_settings = SubResource("LabelSettings_xtqtn")
+horizontal_alignment = 1
+
+[node name="HealAmount" type="Label" parent="Game/UILayer/UI/HealButton/HealText"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 34.0
+offset_right = 292.0
+offset_bottom = 59.0
+text = "12"
+label_settings = SubResource("LabelSettings_27nbx")
+horizontal_alignment = 1
+script = ExtResource("13_0bw0n")
+
+[node name="Score" type="Label" parent="Game/UILayer/UI"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = -164.0
+offset_right = 163.0
+offset_bottom = -141.0
+label_settings = SubResource("LabelSettings_qgy05")
+
+[node name="PlayerUI" type="Control" parent="Game/UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 412.0
+offset_top = 260.0
+offset_right = 452.0
+offset_bottom = 300.0
+
+[node name="PlayerHealth" type="Label" parent="Game/UILayer/PlayerUI"]
+offset_left = -82.0
+offset_top = 85.0
+offset_right = 79.0
+offset_bottom = 135.0
+label_settings = SubResource("LabelSettings_s8llg")
+horizontal_alignment = 1
+script = ExtResource("5_q1wyy")
+
+[node name="PlayerName" type="Label" parent="Game/UILayer/PlayerUI"]
+offset_left = -56.0
+offset_top = -19.0
+offset_right = 64.0
+offset_bottom = 19.0
+text = "Player"
+label_settings = SubResource("LabelSettings_ea1wm")
+horizontal_alignment = 1
+
+[node name="EnemyUI" type="Control" parent="Game/UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 412.0
+offset_top = 260.0
+offset_right = 452.0
+offset_bottom = 300.0
+
+[node name="ActionValue" type="Label" parent="Game/UILayer/EnemyUI"]
+offset_left = 900.0
+offset_top = 152.0
+offset_right = 1061.0
+offset_bottom = 177.0
+label_settings = SubResource("LabelSettings_hgm54")
+horizontal_alignment = 1
+script = ExtResource("8_ddj6k")
+
+[node name="EnemyHealth" type="Label" parent="Game/UILayer/EnemyUI"]
+offset_left = -81.0
+offset_top = 86.0
+offset_right = 80.0
+offset_bottom = 136.0
+label_settings = SubResource("LabelSettings_s8llg")
+horizontal_alignment = 1
+script = ExtResource("9_7ijfe")
+
+[node name="EnemyName" type="Label" parent="Game/UILayer/EnemyUI"]
+offset_left = -58.0
+offset_top = -23.0
+offset_right = 62.0
+offset_bottom = 15.0
+text = "Enemy"
+label_settings = SubResource("LabelSettings_ea1wm")
+horizontal_alignment = 1
+
+[node name="GameOver" type="CanvasLayer" parent="."]
+script = ExtResource("14_0skss")
+
+[node name="Menu2" type="TextureRect" parent="GameOver"]
+visible = false
+offset_left = 205.0
+offset_top = 95.0
+offset_right = 922.0
+offset_bottom = 498.0
+texture = ExtResource("15_6uke5")
+expand_mode = 1
+
+[node name="GameOverText" type="Label" parent="GameOver/Menu2"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 50.0
+offset_right = 503.0
+offset_bottom = 111.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_81nit")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreText" type="Label" parent="GameOver/Menu2"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 146.0
+offset_right = 506.0
+offset_bottom = 211.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_cfrva")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="GameOver/Menu2"]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 273.0
+offset_right = 491.0
+offset_bottom = 347.0
+
+[node name="Label" type="Label" parent="GameOver/Menu2/PlayAgain"]
+layout_mode = 0
+offset_right = 244.0
+offset_bottom = 74.0
+text = "Play again"
+label_settings = SubResource("LabelSettings_6qc6u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Game/UILayer/UI/HitButton" to="." method="_on_hit_button_pressed"]
+[connection signal="pressed" from="Game/UILayer/UI/HealButton" to="." method="_on_heal_button_pressed"]
+[connection signal="pressed" from="GameOver/Menu2/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOver/Menu2/PlayAgain" to="." method="_on_button_pressed"]
